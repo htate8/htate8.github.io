@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Seen - Photography Portfolio Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Allura&family=Great+Vibes&family=Parisienne&family=Sacramento&family=Kaushan+Script&family=Satisfy&family=Amatic+SC:wght@400;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            padding: 8rem 2rem;
+            background-image: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%),
+                url(your-hero-image.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2c3e50;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        #home {
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Custom layout for portrait gallery to fit together */
+        #gallery-individual .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 200px;
+            gap: 0.5rem;
+        }
+        
+        #gallery-individual .gallery img:nth-child(1) {
+            grid-row: span 2;
+        }
+        
+        #gallery-individual .gallery img:nth-child(2) {
+            grid-row: span 1;
+        }
+        
+        #gallery-individual .gallery img:nth-child(3) {
+            grid-row: span 1;
+        }
+        
+        #gallery-individual .gallery img:nth-child(4) {
+            grid-row: span 2;
+        }
+        
+        #gallery-individual .gallery img:nth-child(5) {
+            grid-row: span 1;
+        }
+        
+        #gallery-individual .gallery img:nth-child(6) {
+            grid-row: span 1;
+        }
+        
+        #gallery-individual .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f5f5f5;
+        }
+        
+        /* Custom layout for travel gallery to fit together */
+        #gallery-travel .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 150px;
+            gap: 0.5rem;
+        }
+        
+        /* travel_01 - portrait orientation */
+        #gallery-travel .gallery img:nth-child(1) {
+            grid-row: span 3;
+        }
+        
+        /* travel_02 - landscape */
+        #gallery-travel .gallery img:nth-child(2) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        /* travel_07 - landscape */
+        #gallery-travel .gallery img:nth-child(3) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        /* travel_03 - portrait */
+        #gallery-travel .gallery img:nth-child(4) {
+            grid-row: span 3;
+        }
+        
+        /* travel_04 - landscape */
+        #gallery-travel .gallery img:nth-child(5) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        /* travel_05 - portrait */
+        #gallery-travel .gallery img:nth-child(6) {
+            grid-row: span 3;
+        }
+        
+        /* travel_08 - landscape */
+        #gallery-travel .gallery img:nth-child(7) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        /* travel_06 - square-ish */
+        #gallery-travel .gallery img:nth-child(8) {
+            grid-row: span 2;
+        }
+        
+        #gallery-travel .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f5f5f5;
+        }
+        
+        .gallery img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        label {
+            display: block;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .subtext {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Submit button styling */
+        .submit-button {
+            margin-top: 2rem;
+            padding: 0.75rem 2rem;
+            background-color: #e8d5c4;
+            color: #333;
+            border: 1px solid #d4c4b0;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 6px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .submit-button:hover {
+            background-color: #d4c4b0;
+        }
+        
+        /* Full width layout for group photos */
+        #gallery-group .gallery {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        #gallery-group .gallery img {
+            max-width: 100%;
+        }
+        
+        /* Warm tan background for inquiry section */
+        #inquiry {
+            background-color: #f5ebe0;
+        }
+        
+        /* Fixed footer banner */
+        .footer-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(232, 213, 196, 0.95);
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+            font-weight: 500;
+            padding: 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid #d4c4b0;
+            font-size: 0.9rem;
+            z-index: 1000;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .footer-banner a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .footer-banner a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Sticky navigation bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #e8d5c4;
+            border-bottom: 1px solid #d4c4b0;
+            padding: 0.5rem 2rem;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        nav .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        nav .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #666;
+        }
+        
+        /* Add padding to body so content isn't hidden behind fixed footer */
+        body {
+            padding-bottom: 60px;
+        }
+
+        #home {
+            background-image: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%),
+                url(your-hero-image.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            max-width: 100%;
+            text-align: center;
+            padding: 2rem 2rem 5rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="your-logo.png" alt="Your Brand Logo" class="logo">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#gallery-travel">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#inquiry">Inquiries</a>
+        </div>
+    </nav>
+
+    <header>
+        <!-- REPLACE: Change this to your business name -->
+        <h1>Simply Seen</h1>
+        <!-- REPLACE: Add your tagline -->
+        <p>Travel, portrait, and documentary-style photography focused on quiet details and thoughtful composition.</p>
+    </header>
+
+    <section id="home">
+        <!-- REPLACE: Add your homepage messaging here -->
+        <p>I photograph people and places with attention to what's often overlooked—the small details, the natural framing, the moments that don't ask for attention but deserve it.</p>
+        
+        <p>My work leans toward a classic, simple approach, using natural light and careful composition to let the subject speak for itself.</p>
+        
+        <p>I work with individuals, groups, and places, creating images that feel grounded, honest, and unforced.</p>
+        
+        <p>This work is for people who value subtlety, clarity, and photographs that hold up over time.</p>
+    </section>
+
+    
+
+    <section id="gallery-travel">
+        <!-- REPLACE: Customize gallery title -->
+        <h2>Travel Photography</h2>
+        
+        <p>Photographs made through observation—capturing places as they are, with attention to light, structure, and small moments that define a location. These images focus on presence rather than spectacle.</p>
+        
+        <div class="gallery">
+            <div class="image-placeholder" style="aspect-ratio: 2/3;">Travel Photo 1<br>(Portrait)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Travel Photo 2<br>(Landscape)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Travel Photo 7<br>(Landscape)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Travel Photo 3<br>(Landscape)</div>
+            <div class="image-placeholder" style="aspect-ratio: 2/3;">Travel Photo 4<br>(Portrait)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Travel Photo 5<br>(Landscape)</div>
+            <div class="image-placeholder" style="aspect-ratio: 1/1;">Travel Photo 8<br>(Square)</div>
+            <div class="image-placeholder" style="aspect-ratio: 2/3;">Travel Photo 6<br>(Portrait)</div>
+        </div>
+    </section>
+
+    <section id="gallery-individual">
+        <!-- REPLACE: Customize gallery title -->
+        <h2>Individual Sessions</h2>
+        
+        <p>Portraits that feel natural and unforced, using simple settings and thoughtful framing to reflect the person as they are. The emphasis is on comfort, clarity, and subtle detail.</p>
+        
+        <div class="gallery">
+            <div class="image-placeholder" style="aspect-ratio: 2/3;">Portrait 1<br>(Tall)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Portrait 2<br>(Wide)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Portrait 3<br>(Wide)</div>
+            <div class="image-placeholder" style="aspect-ratio: 2/3;">Portrait 4<br>(Tall)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Portrait 5<br>(Wide)</div>
+            <div class="image-placeholder" style="aspect-ratio: 3/2;">Portrait 6<br>(Wide)</div>
+        </div>
+    </section>
+
+    <section id="gallery-group">
+        <!-- REPLACE: Customize gallery title -->
+        <h2>Group Sessions</h2>
+        
+        <p>Group photographs that balance structure and ease, allowing real interaction to guide the image. The focus is on connection and composition rather than posed formality.</p>
+        
+        <div class="gallery">
+            <div class="image-placeholder" style="aspect-ratio: 16/9;">Group Photo 1<br>(Landscape)</div>
+            <div class="image-placeholder" style="aspect-ratio: 16/9;">Group Photo 2<br>(Landscape)</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <!-- REPLACE: Customize section title -->
+        <h2>Artist Statement</h2>
+        
+<p>Photography, for me, is about paying attention. I'm drawn to the quiet relationships between subjects and their surroundings—the way a space frames a person, or how a small detail can tell a larger story.</p>
+        
+        <p>Rather than directing moments, I focus on observing them and composing carefully within what's already there.</p>
+        
+        <p>I've been photographing for about five years, working across travel, individual, and group sessions. My approach stays consistent: simple, detail-oriented, and classic.</p>
+        
+        <p>I aim to make images that feel natural and lasting, and that help viewers notice something they might have otherwise passed by.</p>
+    </section>
+
+    <section id="inquiry">
+        <!-- REPLACE: Customize section title -->
+        <h2>Inquiries</h2>
+        
+        <!-- REPLACE: Add your Formspree form ID
+             1. Sign up at https://formspree.io (free)
+             2. Create a new form
+             3. Get your form ID (looks like: xyzabc123)
+             4. Replace YOUR_FORMSPREE_ID below with your actual ID
+        -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <h3>Basic Information</h3>
+            
+            <label for="name">
+                <div class="subtext">Your full name</div>
+                Name
+            </label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe">
+            
+            <label for="email">
+                <div class="subtext">Best email to reach you</div>
+                Email
+            </label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com">
+            
+            <label for="project-type">
+                <div class="subtext">What kind of work are you inquiring about?</div>
+                Project Type
+            </label>
+            <select id="project-type" name="project-type">
+                <option value="">Select an option</option>
+                <option value="travel">Travel / Photojournalism</option>
+                <option value="individual">Individual Session</option>
+                <option value="group">Group Session</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <h3>Creative Intent</h3>
+            
+            <label for="what-drew-you">
+                <div class="subtext">What about my approach or images resonated with you?</div>
+                What drew you to this work
+            </label>
+            <textarea id="what-drew-you" name="what-drew-you"></textarea>
+            
+            <label for="image-mood">
+                <div class="subtext">When you imagine the final images, what qualities or atmosphere matter most to you?</div>
+                Image mood
+            </label>
+            <textarea id="image-mood" name="image-mood" placeholder="Quiet, natural, grounded, observational…"></textarea>
+            
+            <h3>Expectations & Fit</h3>
+            
+            <label for="intended-use">
+                <div class="subtext">How do you plan to use the photographs?</div>
+                Intended use of the images
+            </label>
+            <select id="intended-use" name="intended-use">
+                <option value="">Select an option</option>
+                <option value="personal">Personal keepsakes</option>
+                <option value="editorial">Editorial or publication</option>
+                <option value="website">Website or brand use</option>
+                <option value="archival">Archival / long-term documentation</option>
+                <option value="not-sure">Not sure yet</option>
+            </select>
+            
+            <h3>Additional Context</h3>
+            
+            <label for="additional-context">
+                <div class="subtext">Feel free to include timing, location, or any context you think would be helpful.</div>
+                Anything else you'd like to share
+            </label>
+            <textarea id="additional-context" name="additional-context"></textarea>
+        
+            
+            <button type="submit" class="submit-button">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <div class="footer-banner">
+        <strong>Simply Seen Photography</strong> | <a href="/cdn-cgi/l/email-protection#453c2a30376b2028242c2905203d24283529206b262a28"><span cla
